@@ -1,0 +1,23 @@
+- name: Install required packages
+  community.general.pacman:
+    name:
+      - git
+      - man-db
+      - neofetch
+      - ranger
+      - tmux
+      - unp
+      - unzip
+      - vim
+      - zsh
+    state: latest
+    update_cache: yes
+  become: yes
+
+- name: Install required packages (AUR)
+  community.general.pacman:
+    executable: yay
+    name:
+      - ttf-meslo-nerd-font-powerlevel10k
+    state: latest
+    update_cache: yes
