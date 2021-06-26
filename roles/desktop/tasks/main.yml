@@ -1,0 +1,30 @@
+- name: Install packages (Arch)
+  ansible.builtin.include: arch.yml
+  when: ansible_facts["distribution"] == "Archlinux"
+
+- name: Copy configuration files
+  ansible.builtin.copy:
+    src: "{{ item.src }}"
+    dest: "{{ home_dir }}/.config/{{ item.dest }}"
+    mode: preserve
+  loop:
+    - src: alacritty
+      dest: "{{ home_dir }}/.config/alacritty"
+    - src: dconf
+      dest: "{{ home_dir }}/.config/dconf"
+    - src: feh
+      dest: "{{ home_dir }}/.config/feh"
+    - src: i3
+      dest: "{{ home_dir }}/.config/i3"
+    - src: mouse
+      dest: "{{ home_dir }}/.config/mouse"
+    - src: picom
+      dest: "{{ home_dir }}/.config/picom"
+    - src: polybar
+      dest: "{{ home_dir }}/.config/polybar"
+    - src: rofi
+      dest: "{{ home_dir }}/.config/rofi"
+    - src: wal
+      dest: "{{ home_dir }}/.config/wal"
+    - src: xinitrc
+      dest: "{{ home_dir }}/.xinitrc"
