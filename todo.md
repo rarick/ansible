@@ -82,29 +82,29 @@ create user, assign groups, make home
 
 configure /etc/X11/xorg.conf
 
-configure ~/.xinitrc
+#configure ~/.xinitrc
 
-configure ~/.profile
+#configure ~/.profile
 
-Install font
+#Install font
 
-Install yay
+#Install yay
 
-Install+configure polybar
+#Install+configure polybar
 
-Configure $HOME/.config/i3/config
+#Configure $HOME/.config/i3/config
 
 Configure $HOME/.config/spotifyd
 
 Configure $HOME/.config/systemd/user/spotifyd.service
 
-Configure $HOME/.config/alacritty/alacritty.yml
+#Configure $HOME/.config/alacritty/alacritty.yml
 
-Install oh-my-zsh
+#Install oh-my-zsh
 
-Install + configure powerlevel10k
+#Install + configure powerlevel10k
 
-Install ranger_devicons (ensure depth 1, and echo after)
+#Install ranger_devicons (ensure depth 1, and echo after)
 
 Set default audio sink/source for pulseaudio
 
