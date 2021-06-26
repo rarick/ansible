@@ -18,6 +18,8 @@
   community.general.pacman:
     executable: yay
     name:
+      - tmux-plugin-manager
       - ttf-meslo-nerd-font-powerlevel10k
+      - vim-plug
     state: latest
     update_cache: yes

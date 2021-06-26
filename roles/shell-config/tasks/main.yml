@@ -25,6 +25,7 @@
     src: "{{ item.src }}"
     dest: "{{ item.dest }}"
     mode: '0644'
+    directory_mode: '0655'
   loop:
     - src: aliases.sh
       dest: "{{ home_dir }}/.aliases.sh"
@@ -40,7 +41,8 @@
       dest: "{{ home_dir }}/.p10k.zsh"
     - src: tmux.conf
       dest: "{{ home_dir }}/.tmux.conf"
+    - src: vim
+      dest: "{{ home_dir }}/.vim"
     - src: zshrc
       dest: "{{ home_dir }}/.zshrc"
 
-# TODO: Need to copy ~/.vim as well

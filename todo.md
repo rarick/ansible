@@ -25,6 +25,7 @@ installed packages:
 - pkgconf
 - pulseaudio
 - pulseaudio-alsa
+- python-i3ipc
 - python-pywal
 # - ranger
 - rofi
@@ -43,6 +44,7 @@ installed packages:
 # - zsh
 
 yay packages:
+- alternating-layouts-git
 - google-chrome
 # - ttf-meslo-nerd-font-powerlevel10k
 - picom-jonaburg-git
@@ -51,6 +53,7 @@ yay packages:
 - python-colorthief
 - spotify-tui
 - xcwd
+#- vim-plug
 
 made config files:
 - /etc/localtime
