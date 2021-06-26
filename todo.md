@@ -72,7 +72,6 @@ enable systemd services:
 - pulseaudio (USER)
 - spotifyd (USER)
 
-
 configured networking in /etc/systemd/network
 
 configure boot loader (grub)

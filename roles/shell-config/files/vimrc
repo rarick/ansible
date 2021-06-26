@@ -92,3 +92,29 @@ nnoremap <C-S-Tab> :bp<CR>
 
 " shift+k splits a line
 nnoremap <S-K> i<CR><ESC>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugins
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Specify a directory for plugins
+call plug#begin('~/.vim/plugged')
+
+Plug 'christoomey/vim-tmux-navigator'
+
+Plug 'junegunn/vim-easy-align'
+
+Plug 'sheerun/vim-polyglot'
+
+Plug 'tomtom/tcomment_vim'
+
+Plug 'dracula/vim'
+
+Plug 'vim-airline/vim-airline'
+
+Plug 'vim-airline/vim-airline-themes'
+
+Plug 'tpope/vim-fugitive'
+
+" Initialize plugin system
+call plug#end()

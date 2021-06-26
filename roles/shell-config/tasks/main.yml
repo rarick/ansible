@@ -1,6 +1,6 @@
 - name: Install packages (Arch)
   ansible.builtin.include: arch.yml
-  when: "{{ ansible_facts['distribution'] == 'Archlinux' }}"
+  when: ansible_facts["distribution"] == "Archlinux"
 
 - name: Check for oh-my-zsh
   ansible.builtin.stat:
@@ -20,12 +20,21 @@
       ansible.builtin.shell:
         cmd: sh -c /tmp/install-zsh.sh
 
+- name: Create required directories
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+    mode: "0755"
+  loop:
+    - "{{ home_dir }}/.config/ranger/plugins"
+    - "{{ home_dir }}/.vim"
+
 - name: Copy configuration files
   ansible.builtin.copy:
     src: "{{ item.src }}"
     dest: "{{ item.dest }}"
-    mode: '0644'
-    directory_mode: '0655'
+    mode: "0644"
+    directory_mode: "0755"
   loop:
     - src: aliases.sh
       dest: "{{ home_dir }}/.aliases.sh"
@@ -39,10 +48,22 @@
       dest: "{{ home_dir }}/.inputrc"
     - src: p10k.zsh
       dest: "{{ home_dir }}/.p10k.zsh"
+    - src: rc.conf
+      dest: "{{ home_dir }}/.config/ranger/rc.conf"
     - src: tmux.conf
       dest: "{{ home_dir }}/.tmux.conf"
-    - src: vim
-      dest: "{{ home_dir }}/.vim"
+    - src: vimrc
+      dest: "{{ home_dir }}/.vim/vimrc"
     - src: zshrc
       dest: "{{ home_dir }}/.zshrc"
 
+- name: Update and install vim plugins
+  ansible.builtin.shell:
+    cmd: vim +PlugUpdate +PlugInstall +PlugClean +qall
+
+- name: Install ranger devicons
+  ansible.builtin.git:
+    repo: https://github.com/alexanderjeurissen/ranger_devicons.git
+    dest: "{{ home_dir }}/.config/ranger/plugins/ranger_devicons"
+    depth: 1
+    single_branch: yes
