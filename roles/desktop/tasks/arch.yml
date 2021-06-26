@@ -1,0 +1,36 @@
+- name: Install required packages
+  community.general.pacman:
+    name:
+      - alacritty
+      - alsa-utils
+      - asoundconf
+      - feh
+      - gnu-free-fonts
+      - i3-gaps
+      - i3status
+      - pulseaudio
+      - pulseaudio-alsa
+      - python-i3ipc
+      - python-pywal
+      - rofi
+      - xclip
+      - xdg-utils
+      - org-server
+      - xorg-xinit
+      - xorg-xinput
+      - xss-lock
+    state: latest
+    update_cache: yes
+  become: yes
+
+- name: Install required packages (AUR)
+  community.general.pacman:
+    executable: yay
+    name:
+      - alternating-layouts-git
+      - picom-jonaburg-git
+      - polybar
+      - python-colorthief
+      - xcwd
+    state: latest
+    update_cache: yes

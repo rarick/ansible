@@ -3,56 +3,56 @@ fdisk, partitions, mkfs
 mount, fstab, chroot
 
 installed packages:
-- alacritty
-- alsa-utils
+#- alacritty
+#- alsa-utils
 - amducode
-- asoundconf
+#- asoundconf
 - base-devel
 - discord
 - dosfstools
 - efibootmgr
-- feh
+#- feh
 # - git
-- gnu-free-fonts
+#- gnu-free-fonts
 - grub
-- i3-gaps
-- i3status
+#- i3-gaps
+#- i3status
 - iwd
 # - man-db
 # - neofetch
 - nvidia
 - openssh
 - pkgconf
-- pulseaudio
-- pulseaudio-alsa
-- python-i3ipc
-- python-pywal
+#- pulseaudio
+#- pulseaudio-alsa
+#- python-i3ipc
+#- python-pywal
 # - ranger
-- rofi
+#- rofi
 - spotifyd
 - steam
 # - tmux
 # - unp
 # - unzip
 # - vim
-- xclip
-- xdg-utils
-- xorg-server
-- xorg-xinit
-- xorg-xinput
-- xss-lock
+#- xclip
+#- xdg-utils
+#- xorg-server
+#- xorg-xinit
+#- xorg-xinput
+#- xss-lock
 # - zsh
 
 yay packages:
-- alternating-layouts-git
+#- alternating-layouts-git
 - google-chrome
 # - ttf-meslo-nerd-font-powerlevel10k
-- picom-jonaburg-git
-- polybar
+#- picom-jonaburg-git
+#- polybar
 - proton-ge-custom
-- python-colorthief
+#- python-colorthief
 - spotify-tui
-- xcwd
+#- xcwd
 #- vim-plug
 
 made config files:
@@ -83,8 +83,6 @@ create user, assign groups, make home
 configure /etc/X11/xorg.conf
 
 configure ~/.xinitrc
-
-configure ~/.Xmodmap
 
 configure ~/.profile
 
