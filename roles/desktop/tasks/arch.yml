@@ -15,7 +15,7 @@
       - rofi
       - xclip
       - xdg-utils
-      - org-server
+      - xorg-server
       - xorg-xinit
       - xorg-xinput
       - xss-lock
