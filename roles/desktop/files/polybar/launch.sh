@@ -2,7 +2,6 @@
 
 # Parameters
 BACKGROUND_PATH="$HOME/.config/feh/background.jpg"
-STYLE="cuts"
 
 DIR="$HOME/.config/polybar"
 
@@ -14,9 +13,8 @@ launch_bar() {
 	while pgrep -u $UID -x polybar >/dev/null; do sleep 0.1; done
 
 	# Launch the bar
-	polybar -q top -c "$DIR/$STYLE/config.ini" &
+	polybar -q top -c "$DIR/config.ini" &
 }
 
-$DIR/cuts/scripts/pywal.sh "$BACKGROUND_PATH"
-echo $DIR/cuts/scripts/pywal.sh > test.txt
+$DIR/scripts/pywal.sh "$BACKGROUND_PATH"
 launch_bar

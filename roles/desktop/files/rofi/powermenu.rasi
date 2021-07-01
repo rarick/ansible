@@ -19,14 +19,14 @@ configuration {
   sidebar-mode: false;
 }
 
-@import "~/.cache/wal/rofi-colors.rasi" window {
+@import "colors.rasi" window {
   transparency: "real";
   background-color: @bg;
   text-color: @fg;
   border: 0px;
   border-color: @ac;
   border-radius: 0px;
-  width: 1000px;
+  width: 300px;
   location: center;
   x-offset: 0;
   y-offset: 0;
@@ -34,9 +34,17 @@ configuration {
 
 prompt {
   enabled: true;
-  padding: 0px;
+  padding: 0px 0px 0px 5px;
+  background-color: @al;
+  text-color: @fg;
+}
+
+textbox-prompt-colon {
+  padding: 0px 0px 0px 2px;
   background-color: @al;
   text-color: @ac;
+  expand: false;
+  str: "";
   font: "feather 12";
 }
 
@@ -47,12 +55,12 @@ entry {
   expand: true;
   horizontal-align: 0;
   placeholder: "Search...";
-  padding: 0px 0px 0px 8px;
+  padding: 0px;
   blink: true;
 }
 
 inputbar {
-  children: [ prompt, entry];
+  children: [ textbox-prompt-colon, prompt];
   background-color: @bga;
   text-color: @fg;
   expand: false;
@@ -67,8 +75,8 @@ listview {
   background-color: @al;
   padding: 0px;
   columns: 1;
-  lines: 10;
-  spacing: 5px;
+  lines: 5;
+  spacing: 0px;
   cycle: true;
   dynamic: true;
   layout: vertical;
@@ -89,7 +97,7 @@ element {
   text-color: @fg;
   orientation: horizontal;
   border-radius: 0px;
-  padding: 8px;
+  padding: 8px 8px 8px -15px;
 }
 
 element-icon {
