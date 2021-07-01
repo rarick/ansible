@@ -31,6 +31,6 @@
       - picom-jonaburg-git
       - polybar
       - python-colorthief
-      - xcwd
+      - xcwd-git
     state: latest
     update_cache: yes
