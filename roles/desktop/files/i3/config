@@ -6,11 +6,11 @@ font pango:DejaVu Sans Mono 10
 ##################################################
 exec_always --no-startup-id $HOME/.config/alacritty/set-colors.sh
 exec_always --no-startup-id $HOME/.config/feh/launch.sh
-exec_always --no-startup-id $HOME/.config/mouse/set-mouse-speed.sh
 exec_always --no-startup-id $HOME/.config/picom/launch.sh
 exec_always --no-startup-id $HOME/.config/wal/launch.sh
 
 exec_always --no-startup-id alternating_layouts.py
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
@@ -192,8 +192,3 @@ default_border none
 gaps inner 8
 smart_borders on
 smart_gaps on
-
-##################################################
-# Polybar
-##################################################
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
