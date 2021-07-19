@@ -4,7 +4,7 @@ font pango:DejaVu Sans Mono 10
 ##################################################
 # Startup
 ##################################################
-exec_always --no-startup-id redshift-gtk -c $HOME/.config/redshift/redshift.conf
+exec_always --no-startup-id $HOME/.config/redshift/launch.sh
 exec_always --no-startup-id $HOME/.config/alacritty/set-colors.sh
 exec_always --no-startup-id $HOME/.config/feh/launch.sh
 exec_always --no-startup-id $HOME/.config/picom/launch.sh
