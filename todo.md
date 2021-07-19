@@ -108,6 +108,8 @@ Configure $HOME/.config/systemd/user/spotifyd.service
 
 Set default audio sink/source for pulseaudio
 
+/etc/pacman.conf
+
 # TODO:
 ## Cosmetics
 - i3

@@ -2,7 +2,7 @@
   ansible.builtin.include: arch.yml
   when: ansible_facts["distribution"] == "Archlinux"
 
-- name: Copy configuration files
+- name: Copy user configuration files
   ansible.builtin.copy:
     src: "{{ item.src }}"
     dest: "{{ home_dir }}/.config/{{ item.dest }}"
@@ -22,9 +22,22 @@
       dest: "{{ home_dir }}/.config/picom"
     - src: polybar
       dest: "{{ home_dir }}/.config/polybar"
+    - src: redshift
+      dest: "{{ home_dir }}/.config/redshift"
     - src: rofi
       dest: "{{ home_dir }}/.config/rofi"
     - src: wal
       dest: "{{ home_dir }}/.config/wal"
     - src: xinitrc
       dest: "{{ home_dir }}/.xinitrc"
+
+- name: Copy global configuration files
+  ansible.builtin.copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    mode: preserve
+    owner: root
+    group: root
+  loop:
+    - src: geoclue.conf
+      dest: /etc/geoclue/geoclue.conf
