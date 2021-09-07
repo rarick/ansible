@@ -19,7 +19,7 @@ cat > $RFILE << EOF
 /* colors */
 
 * {
-  al:   #00000000;
+  al:   #000000FF;
   bg:   #${BG}BF;
   bga:  #${BG}FF;
   fg:   #${FG}FF;
