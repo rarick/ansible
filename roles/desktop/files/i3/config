@@ -89,9 +89,6 @@ bindsym $mod+s layout stacking
 bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
-# mouse warping
-mouse_warping none
-
 # toggle tiling / floating
 bindsym $mod+g floating toggle
 
