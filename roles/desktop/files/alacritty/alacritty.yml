@@ -14,7 +14,7 @@
 env:
   TERM: xterm-256color
 
-background_opacity: 0.975
+
 
 shell:
   program: /usr/bin/zsh
@@ -22,6 +22,7 @@ shell:
     - --login
 
 window:
+  opacity: 0.975
   padding:
     x: 8
     y: 8
@@ -105,7 +106,7 @@ font:
   #title: Alacritty
 
   # Allow terminal applications to change Alacritty's window title.
-  #dynamic_title: true
+  # dynamic_title: true
 
   # Window class (Linux/BSD only):
   #class:
