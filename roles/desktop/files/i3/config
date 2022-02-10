@@ -90,8 +90,7 @@ bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
 # mouse warping
-bindsym $mod+w mouse_warping output
-bindsym $mod+Shift+w mouse_warping none
+mouse_warping none
 
 # toggle tiling / floating
 bindsym $mod+g floating toggle
