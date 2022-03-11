@@ -29,6 +29,7 @@
     executable: yay
     name:
       - alternating-layouts-git
+      - i3lock-color
       - picom-jonaburg-git
       - polybar
       - python-colorthief
