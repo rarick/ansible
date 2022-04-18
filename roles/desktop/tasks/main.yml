@@ -10,6 +10,8 @@
   loop:
     - src: alacritty
       dest: "{{ home_dir }}/.config/alacritty"
+    - src: bluetooth
+      dest: "{{ home_dir }}/.config/bluetooth"
     - src: dconf
       dest: "{{ home_dir }}/.config/dconf"
     - src: feh
@@ -41,3 +43,18 @@
   loop:
     - src: geoclue.conf
       dest: /etc/geoclue/geoclue.conf
+
+- name: Add user to groups
+  ansible.builtin.user:
+    append: yes
+    groups:
+      - lp
+    name: "{{ lookup('env', 'USER') }}"
+
+- name: Configure systemd units
+  ansible.builtin.systemd:
+    name: "{{ item }}"
+    enabled: yes
+    state: started
+  loop:
+    - bluetooth

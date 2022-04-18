@@ -4,6 +4,8 @@
       - alacritty
       - alsa-utils
       - asoundconf
+      - blueman
+      - bluez
       - feh
       - gnu-free-fonts
       - i3-gaps

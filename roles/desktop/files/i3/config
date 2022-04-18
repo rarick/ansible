@@ -9,6 +9,7 @@ exec_always --no-startup-id $HOME/.config/redshift/launch.sh
 exec_always --no-startup-id $HOME/.config/alacritty/set-colors.sh
 exec_always --no-startup-id $HOME/.config/feh/launch.sh
 exec_always --no-startup-id $HOME/.config/picom/launch.sh
+exec_always --no-startup-id $HOME/.config/bluetooth/launch.sh
 
 exec_always --no-startup-id alternating_layouts.py
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
