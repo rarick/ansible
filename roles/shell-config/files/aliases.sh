@@ -11,6 +11,11 @@ function cd {
   l
 }
 
+function cdg {
+  GIT_ROOT_DIR="$(git rev-parse --show-toplevel)"
+  [ -z "$GIT_ROOT_DIR" ] || cd "$GIT_ROOT_DIR"
+}
+
 alias ..='cd ..'
 alias sbc='source ~/.bashrc'
 alias e='exit'
