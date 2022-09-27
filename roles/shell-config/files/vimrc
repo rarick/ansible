@@ -1,7 +1,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " Themes
 """""""""""""""""""""""""""""""""""""""""""""""""""
-syntax enable		" Enables syntax processing
+syntax enable   " Enables syntax processing
 
 " Airline
 let g:airline_theme='dracula'
@@ -11,20 +11,23 @@ set t_Co=256
 set background=dark
 set encoding=utf-8
 
+" Larger vim registers
+set viminfo='20,<1000
+
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " Spaces and tabs
 """""""""""""""""""""""""""""""""""""""""""""""""""
-set tabstop=2		" 2 visual spaces per tab
-set softtabstop=2	" inserts 2 spaces per tab when editing
-set expandtab		" converts tabs to spaces
-set shiftwidth=2    " 2 spaces per indentation level
+set tabstop=2      " 2 visual spaces per tab
+set softtabstop=2  " inserts 2 spaces per tab when editing
+set expandtab      " converts tabs to spaces
+set shiftwidth=2   " 2 spaces per indentation level
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " UI
 """""""""""""""""""""""""""""""""""""""""""""""""""
-set number		    " Numbers in gutter
-set showcmd		    " Shows the last command entered in the bottom right
-set cursorline		" Highlights the current line
+set number          " Numbers in gutter
+set showcmd         " Shows the last command entered in the bottom right
+set cursorline      " Highlights the current line
 filetype indent on  " Allows loading of files to change indent
 set wildmenu        " Shows list of possible autocompletions on tab
 set lazyredraw      " Redraw only when needed, supposedly leads to faster macros
@@ -89,7 +92,6 @@ inoremap jk <ESC>
 nnoremap <C-Tab> :bn<CR>
 nnoremap <C-S-Tab> :bp<CR>
 
-
 " shift+k splits a line
 nnoremap <S-K> i<CR><ESC>
 
@@ -101,20 +103,57 @@ nnoremap <S-K> i<CR><ESC>
 call plug#begin('~/.vim/plugged')
 
 Plug 'christoomey/vim-tmux-navigator'
-
 Plug 'junegunn/vim-easy-align'
-
 Plug 'sheerun/vim-polyglot'
-
 Plug 'tomtom/tcomment_vim'
-
 Plug 'dracula/vim'
-
 Plug 'vim-airline/vim-airline'
-
 Plug 'vim-airline/vim-airline-themes'
-
 Plug 'tpope/vim-fugitive'
+Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 
 " Initialize plugin system
 call plug#end()
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+" tcomment
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+" Uncomments current line, and changes to a block comment
+" ie, in Javascript:
+" Before:
+" // Hello
+"
+" After:
+" /**
+" * Hello
+" */
+"
+nmap gjj ^g<c <bar> <c-_>2<c-_>b
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+" coc
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+" <C-J> and <C-K> navigate through suggestions
+inoremap <expr> <C-J> coc#pum#visible() ? coc#pum#next(1) : "\<C-J>"
+inoremap <expr> <C-K> coc#pum#visible() ? coc#pum#prev(1) : "\<C-K>"
+
+" <cr> confirms suggestion
+inoremap <expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+
+" Colors
+highlight CocErrorFloat ctermfg=White guifg=#ffffff
+
+" coc extensions
+let g:coc_global_extensions = [
+  \'coc-cfn-lint',
+  \'coc-docker',
+  \'coc-git',
+  \'coc-go',
+  \'coc-java',
+  \'coc-json',
+  \'coc-marketplace',
+  \'coc-prettier',
+  \'coc-pyright',
+  \'coc-tsserver',
+  \'coc-yaml',
+\]
