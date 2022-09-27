@@ -43,6 +43,7 @@
   loop:
     - src: geoclue.conf
       dest: /etc/geoclue/geoclue.conf
+  become: yes
 
 - name: Add user to groups
   ansible.builtin.user:
