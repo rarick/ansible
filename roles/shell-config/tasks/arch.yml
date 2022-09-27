@@ -4,11 +4,13 @@
       - git
       - man-db
       - neofetch
+      - node
       - ranger
       - tmux
       - unp
       - unzip
       - vim
+      - yarn
       - zsh
     state: latest
     update_cache: yes

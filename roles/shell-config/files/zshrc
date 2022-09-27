@@ -116,3 +116,5 @@ bindkey -M viins 'jk' vi-cmd-mode
 
 unalias gc
 source ~/.aliases.sh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
