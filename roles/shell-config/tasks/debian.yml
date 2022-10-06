@@ -1,0 +1,30 @@
+- name: Install required packages
+  ansible.builtin.apt:
+    name:
+      - git
+      - man-db
+      - neofetch
+      - nodejs
+      - ranger
+      - tmux
+      - unp
+      - unzip
+      - vim
+      - yarn
+      - zsh
+      - tmux-plugin-manager
+      # - ttf-meslo-nerd-font-powerlevel10k
+      # - vim-plug
+    state: latest
+    update_cache: yes
+  become: yes
+
+# - name: Install required packages (AUR)
+#   community.general.pacman:
+#     executable: yay
+#     name:
+#       - tmux-plugin-manager
+#       - ttf-meslo-nerd-font-powerlevel10k
+#       - vim-plug
+#     state: latest
+#     update_cache: yes

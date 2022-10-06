@@ -1,6 +1,10 @@
 - name: Install packages (Arch)
-  ansible.builtin.include: arch.yml
+  ansible.builtin.include_tasks: arch.yml
   when: ansible_facts["distribution"] == "Archlinux"
+
+- name: Install packages (Debian)
+  ansible.builtin.include_tasks: debian.yml
+  when: ansible_facts["distribution"] == "Debian"
 
 - name: Check for oh-my-zsh
   ansible.builtin.stat:
@@ -14,7 +18,7 @@
     - name: Download oh-my-zsh install script
       ansible.builtin.get_url:
         url: https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
-        dest: /tmp/install.sh
+        dest: /tmp/install-zsh.sh
 
     - name: Install oh-my-zsh
       ansible.builtin.shell:

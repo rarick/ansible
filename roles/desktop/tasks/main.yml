@@ -1,5 +1,5 @@
 - name: Install packages (Arch)
-  ansible.builtin.include: arch.yml
+  ansible.builtin.include_tasks: arch.yml
   when: ansible_facts["distribution"] == "Archlinux"
 
 - name: Copy user configuration files
