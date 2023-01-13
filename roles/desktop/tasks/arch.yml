@@ -13,7 +13,6 @@
       - pulseaudio
       - pulseaudio-alsa
       - python-i3ipc
-      - python-pywal
       - redshift
       - rofi
       - xclip

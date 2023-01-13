@@ -28,8 +28,6 @@
       dest: "{{ home_dir }}/.config/redshift"
     - src: rofi
       dest: "{{ home_dir }}/.config/rofi"
-    - src: wal
-      dest: "{{ home_dir }}/.config/wal"
     - src: xinitrc
       dest: "{{ home_dir }}/.xinitrc"
 

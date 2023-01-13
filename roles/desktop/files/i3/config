@@ -4,9 +4,7 @@ font pango:DejaVu Sans Mono 10
 ##################################################
 # Startup
 ##################################################
-exec_always --no-startup-id $HOME/.config/wal/launch.sh
 exec_always --no-startup-id $HOME/.config/redshift/launch.sh
-exec_always --no-startup-id $HOME/.config/alacritty/set-colors.sh
 exec_always --no-startup-id $HOME/.config/feh/launch.sh
 exec_always --no-startup-id $HOME/.config/picom/launch.sh
 exec_always --no-startup-id $HOME/.config/bluetooth/launch.sh
@@ -198,3 +196,6 @@ default_border none
 gaps inner 8
 smart_borders on
 smart_gaps on
+
+# for polybar (34 height + 8 gaps)
+gaps top 34
