@@ -195,7 +195,3 @@ for_window [class=".*"] border none
 default_border none
 gaps inner 8
 smart_borders on
-smart_gaps on
-
-# for polybar (34 height + 8 gaps)
-gaps top 34
