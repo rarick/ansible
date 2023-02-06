@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 
-BLANK=282a36
-CLEAR=50fa7b
-DEFAULT=6272a4
-TEXT=f8f8f2
-VERIFYING=bd93f9
-WRONG=ff5555
+source ~/.cache/wal/colors.sh
+
+BLANK=$background
+CLEAR=$color8
+DEFAULT=$color1
+TEXT=$foreground
+VERIFYING=$color2
+WRONG=$color3
 
 i3lock \
 --insidever-color=$CLEAR     \
@@ -42,6 +44,6 @@ i3lock \
 --wrong-text=""             \
 --noinput-text=""           \
 \
---screen 2                   \
+--screen 1                   \
 --blur 8                     \
 --radius 200                 \
