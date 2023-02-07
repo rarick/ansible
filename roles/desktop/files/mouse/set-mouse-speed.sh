@@ -1,9 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
+device="pointer:Logitech G305"
 
-# Sets mouse speed because xinput was being stubborn
-device="Logitech Gaming Mouse G402"
-speed="0.3"
-
-xinput set-prop "$device" "Coordinate Transformation Matrix" "$speed" 0 0 0 "$speed" 0 0 0 1
-
-
+# Disable mouse acceleration
+# https://wiki.archlinux.org/title/Mouse_acceleration
+xinput set-prop "$device" "libinput Accel Profile Enabled" 0 1

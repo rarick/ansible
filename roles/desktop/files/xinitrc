@@ -1,1 +1,4 @@
+$HOME/.config/screen-layout/screen-layout.sh
+$HOME/.config/mouse/set-mouse-speed.sh
+$HOME/.config/mouse/mouse-paste-block.sh
 exec i3
