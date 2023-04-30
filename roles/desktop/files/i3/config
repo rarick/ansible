@@ -9,6 +9,10 @@ exec_always --no-startup-id $HOME/.config/feh/launch.sh
 exec_always --no-startup-id $HOME/.config/picom/launch.sh
 exec_always --no-startup-id $HOME/.config/bluetooth/launch.sh
 
+exec_always --no-startup-id $HOME/.config/mouse/set-mouse-speed.sh
+exec_always --no-startup-id $HOME/.config/mouse/mouse-paste-block.sh
+exec_always --no-startup-id $HOME/.config/keyboard/set-keyboard.sh
+
 exec_always --no-startup-id alternating_layouts.py
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
@@ -20,7 +24,7 @@ set $lockScript $HOME/.config/lock/lock.sh
 # lock screen with ctrl+alt+l
 bindsym Ctrl+Mod1+l exec $lockScript
 
-# Lock + turn off after 660 seconds
+# Lock + turn off screen after 660 seconds
 exec_always --no-startup-id xset dpms 0 0 660
 exec_always --no-startup-id xss-lock --transfer-sleep-lock -- $lockScript
 
