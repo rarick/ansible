@@ -18,6 +18,8 @@
       dest: "{{ home_dir }}/.config/feh"
     - src: i3
       dest: "{{ home_dir }}/.config/i3"
+    - src: keyd
+      dest: "{{ home_dir }}/.config/keyd"
     - src: mouse
       dest: "{{ home_dir }}/.config/mouse"
     - src: picom

@@ -1,3 +1,4 @@
 $HOME/.config/screen-layout/screen-layout.sh
+$HOME/.config/keyd/start.sh
 
 exec i3
