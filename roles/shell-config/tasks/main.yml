@@ -6,6 +6,10 @@
   ansible.builtin.include_tasks: debian.yml
   when: ansible_facts["distribution"] == "Debian"
 
+- name: Install packages (MacOSX)
+  ansible.builtin.include_tasks: mac-osx.yml
+  when: ansible_facts["distribution"] == "MacOSX"
+
 - name: Check for oh-my-zsh
   ansible.builtin.stat:
     path: "{{ home_dir }}/.oh-my-zsh"
@@ -63,7 +67,7 @@
 
 - name: Update and install vim plugins
   ansible.builtin.shell:
-    cmd: vim +PlugUpdate +PlugInstall +PlugClean +qall
+    cmd: vim +PlugUpgrade +PlugClean +PlugUpdate +PlugInstall +qall
 
 - name: Install ranger devicons
   ansible.builtin.git:

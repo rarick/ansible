@@ -1,0 +1,30 @@
+- name: Install required packages
+  block:
+
+    - name: Install homebrew packages
+      community.general.homebrew:
+        name:
+          - git
+          - man-db
+          - neofetch
+          - node
+          - ranger
+          - romkatv/powerlevel10k/powerlevel10k
+          - tmux
+          - unp
+          - unzip
+          - vim
+          - zsh
+        state: latest
+        update_homebrew: yes
+
+    - name: Install vim-plug
+      ansible.builtin.shell: >
+        curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+    - name: Install tpm
+      ansible.builtin.git:
+        repo: https://github.com/tmux-plugins/tpm 
+        dest: "{{ home_dir }}/.tmux/plugins/tpm"
+        depth: 1
