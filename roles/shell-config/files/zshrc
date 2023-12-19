@@ -43,7 +43,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
+DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
@@ -108,7 +108,9 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 bindkey -v
 bindkey "^R" history-incremental-search-backward
@@ -117,4 +119,5 @@ bindkey -M viins 'jk' vi-cmd-mode
 unalias gc
 source ~/.aliases.sh
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Use local zshrc if it exists
+[[ -f ~/.zshrc-local ]] && source ~/.zshrc-local
