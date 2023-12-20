@@ -28,6 +28,26 @@
       ansible.builtin.shell:
         cmd: sh -c /tmp/install-zsh.sh
 
+- name: Check for fzf
+  ansible.builtin.stat:
+    path: "{{ home_dir }}/.fzf"
+  register: fzf
+
+- name: Install fzf
+  when: not fzf.stat.exists
+  block:
+
+    - name: Download fzf
+      ansible.builtin.git:
+        repo: https://github.com/junegunn/fzf.git
+        dest: "{{ home_dir }}/.fzf"
+        depth: 1
+        single_branch: yes
+
+    - name: Install fzf
+      ansible.builtin.shell:
+        cmd: sh -c "{{ home_dir }}/.fzf/install --bin"
+
 - name: Create required directories
   ansible.builtin.file:
     path: "{{ item }}"
