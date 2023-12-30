@@ -4,7 +4,7 @@
       - git
       - man-db
       - neofetch
-      - node
+      - nodejs
       - ranger
       - tmux
       - unp
