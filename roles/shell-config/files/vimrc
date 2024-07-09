@@ -136,8 +136,8 @@ nmap gjj ^g<c <bar> <c-_>2<c-_>b
 " fzf
 """""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap sf :Buffers<CR>
-nnoremap sg :Files<CR>
-nnoremap st :GFiles<CR>
+nnoremap sg :GFiles<CR>
+nnoremap st :Files<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " coc
