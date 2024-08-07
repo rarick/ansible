@@ -7,8 +7,7 @@ alias l="c;ls -lh"
 alias ll="c;ls -alh"
 
 function cd {
-  [ -z "$*" ] && builtin cd ||  builtin cd "$*"
-  l
+  [ -z "$*" ] && builtin cd ||  builtin cd "$*"; l
 }
 
 function cdg {
