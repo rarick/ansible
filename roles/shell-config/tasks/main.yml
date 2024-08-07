@@ -70,8 +70,6 @@
       dest: "{{ home_dir }}/.bash_profile"
     - src: bashrc
       dest: "{{ home_dir }}/.bashrc"
-    - src: gitconfig
-      dest: "{{ home_dir }}/.gitconfig"
     - src: inputrc
       dest: "{{ home_dir }}/.inputrc"
     - src: p10k.zsh
