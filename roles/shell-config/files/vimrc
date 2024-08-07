@@ -167,5 +167,5 @@ endif
 
 " Unset the tmux variable @vim_running when vim exits
 if exists('$TMUX')
-  autocmd VimLeavePre * silent! call system('tmux set-option -pU @vim_running')
+  autocmd VimLeavePre * silent! call system('tmux set-option -pu @vim_running')
 endif
