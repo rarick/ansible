@@ -14,7 +14,6 @@
       - pulseaudio-alsa
       - python-i3ipc
       - redshift
-      - rofi
       - xclip
       - xdg-utils
       - xorg-server
