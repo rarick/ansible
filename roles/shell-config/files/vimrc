@@ -30,7 +30,6 @@ set showcmd         " Shows the last command entered in the bottom right
 set cursorline      " Highlights the current line
 filetype indent on  " Allows loading of files to change indent
 set wildmenu        " Shows list of possible autocompletions on tab
-set lazyredraw      " Redraw only when needed, supposedly leads to faster macros
 set showmatch       " Highlights matching parantheses, brackets, etc
 set scrolloff=15    " Starts scrolling when within 15 of the margin
 
@@ -81,6 +80,11 @@ inoremap jk <ESC>
 nnoremap <S-K> i<CR><ESC>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
+" Misc
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+set nrformats+=alpha
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " Specify a directory for plugins
@@ -119,9 +123,16 @@ nmap gjj ^g<c <bar> <c-_>2<c-_>b
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " fzf
 """""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap sf :Buffers<CR>
 nnoremap sg :GFiles<CR>
 nnoremap st :Files<CR>
+nnoremap sm :Marks<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+" buffers
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap sf :Buffers<CR>
+nnoremap sn :bn<CR>
+nnoremap sp :bp<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " coc
@@ -153,6 +164,7 @@ let g:coc_global_extensions = [
   \'coc-marketplace',
   \'coc-prettier',
   \'coc-pyright',
+  \'coc-rust-analyzer',
   \'coc-tsserver',
   \'coc-yaml',
 \]
