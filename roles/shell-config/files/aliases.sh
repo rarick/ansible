@@ -30,7 +30,8 @@ alias gr='git reset'
 alias dh='git diff HEAD'
 
 alias ds='c;docker ps -a'
-alias xc='xclip -sel clip'
+alias xc='clipcopy'
+alias xv='clippaste'
 
 alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
