@@ -35,11 +35,21 @@ return {
   {
     "ibhagwan/fzf-lua",
     dependencies = { "nvim-tree/nvim-web-devicons" },
+    opts = {
+      fzf_colors = true,
+      keymap = {
+        builtin = {
+          ["<c-l>"] = "preview-down",
+          ["<c-h>"] = "preview-up",
+        },
+      },
+    },
     keys = {
       { "sg", "<cmd>FzfLua git_files<CR>", desc = "Git Files" },
       { "st", "<cmd>FzfLua files<CR>", desc = "Find Files" },
       { "sm", "<cmd>FzfLua marks<CR>", desc = "Marks" },
       { "sf", "<cmd>FzfLua buffers<CR>", desc = "Buffers" },
+      { "s/", "<cmd>FzfLua live_grep<CR>", desc = "Buffers" },
     },
   },
 
