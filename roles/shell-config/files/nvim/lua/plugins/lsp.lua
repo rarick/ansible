@@ -1,5 +1,6 @@
 return {
   { "mason-org/mason.nvim", opts = {} },
+  { "neovim/nvim-lspconfig", lazy = false },
 
   {
     "mason-org/mason-lspconfig.nvim",
@@ -21,12 +22,10 @@ return {
       },
     },
     dependencies = {
-      { "mason-org/mason.nvim", opts = {} },
+      "mason-org/mason.nvim",
       "neovim/nvim-lspconfig",
     },
   },
-
-  { "neovim/nvim-lspconfig", lazy = false },
 
   {
     'hrsh7th/nvim-cmp',
@@ -36,20 +35,17 @@ return {
       local luasnip = require("luasnip")
 
       return {
-        view = {
-          docs = { auto_open = false },
-        },
         snippet = {
           expand = function(args)
             luasnip.lsp_expand(args.body)
           end,
         },
         mapping = cmp.mapping.preset.insert({
-            ["<C-j>"] = cmp.mapping.select_next_item(),
-            ["<C-k>"] = cmp.mapping.select_prev_item(),
-            ["<up>"] = cmp.mapping.scroll_docs(4),
-            ["<down>"] = cmp.mapping.scroll_docs(-4),
-            ["<CR>"] = cmp.mapping.confirm({ select = true }),
+            ["<c-h>"] = cmp.mapping.scroll_docs(-4),
+            ["<c-j>"] = cmp.mapping.select_next_item(),
+            ["<c-k>"] = cmp.mapping.select_prev_item(),
+            ["<c-l>"] = cmp.mapping.scroll_docs(4),
+            ["<cr>"] = cmp.mapping.confirm({ select = true }),
           }),
         sources = cmp.config.sources({
             { name = "nvim_lsp" },

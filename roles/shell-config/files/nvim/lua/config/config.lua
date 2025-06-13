@@ -39,14 +39,6 @@ if os.getenv("TMUX") then
 end
 
 ----------------
--- misc
---------
-vim.opt.showcmd = true
-vim.opt.wildmenu = true
-vim.opt.timeoutlen = 300
-vim.opt.undofile = true
-
-----------------
 -- search
 --------
 vim.opt.showmatch = true
@@ -76,6 +68,14 @@ vim.opt.foldenable = true
 vim.opt.foldlevelstart = 10
 vim.opt.foldnestmax = 10
 vim.opt.foldmethod = "indent"
+
+----------------
+-- misc
+--------
+vim.opt.showcmd = true
+vim.opt.wildmenu = true
+vim.opt.timeoutlen = 300
+vim.opt.undofile = true
 
 ----------------
 -- movement
