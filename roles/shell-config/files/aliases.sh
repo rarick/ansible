@@ -1,7 +1,6 @@
-export EDITOR="vim"
-export VISUAL="vim"
+export EDITOR="nvim"
+export VISUAL="nvim"
 
-# reed's laziness spreading
 alias c="clear"
 alias l="c;ls -lh"
 alias ll="c;ls -alh"
@@ -14,6 +13,9 @@ function cdg {
   GIT_ROOT_DIR="$(git rev-parse --show-toplevel)"
   [ -z "$GIT_ROOT_DIR" ] || cd "$GIT_ROOT_DIR"
 }
+
+alias v="nvim"
+alias vim="nvim"
 
 alias ..='cd ..'
 alias sbc='source ~/.bashrc'
