@@ -28,6 +28,11 @@ return {
   },
 
   {
+    "ray-x/lsp_signature.nvim",
+    event = "InsertEnter",
+  },
+
+  {
     'hrsh7th/nvim-cmp',
     event = 'InsertEnter',
     opts = function()
@@ -41,16 +46,17 @@ return {
           end,
         },
         mapping = cmp.mapping.preset.insert({
-            ["<c-h>"] = cmp.mapping.scroll_docs(-4),
             ["<c-j>"] = cmp.mapping.select_next_item(),
             ["<c-k>"] = cmp.mapping.select_prev_item(),
-            ["<c-l>"] = cmp.mapping.scroll_docs(4),
+            ["<c-l>"] = cmp.mapping.scroll_docs(1),
+            ["<c-h>"] = cmp.mapping.scroll_docs(-1),
             ["<cr>"] = cmp.mapping.confirm({ select = true }),
           }),
         sources = cmp.config.sources({
-            { name = "nvim_lsp" },
-            { name = "luasnip" },
             { name = "buffer" },
+            { name = "luasnip" },
+            { name = "nvim_lsp" },
+            { name = "path" },
           }),
       }
     end,
@@ -61,6 +67,29 @@ return {
       'hrsh7th/cmp-path',
       'saadparwaiz1/cmp_luasnip',
     },
+  },
+
+  {
+    "L3MON4D3/LuaSnip",
+    opts = {
+      selection_change_events = { "InsertEnter" },
+      enable_autosnippets = true,
+    },
+    keys = function()
+      local luasnip = require("luasnip")
+      local function move_choice(n)
+        if luasnip.choice_active() then
+          luasnip.change_choice(n)
+        end
+      end
+
+      return {
+        { "<c-j>", function() move_choice(1) end,mode = { "i", "s" }, silent = true, },
+        { "<c-k>", function() move_choice(-1) end,mode = { "i", "s" }, silent = true, },
+        { "<c-l>", function() luasnip.jump(1) end, mode = { "i", "s" }, silent = true },
+        { "<c-h>", function() luasnip.jump(-1) end, mode = { "i", "s" }, silent = true },
+      }
+    end,
   },
 
   {
