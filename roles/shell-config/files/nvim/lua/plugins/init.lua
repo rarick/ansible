@@ -49,7 +49,7 @@ return {
       { "st", "<cmd>FzfLua files<CR>", desc = "Find Files" },
       { "sm", "<cmd>FzfLua marks<CR>", desc = "Marks" },
       { "sf", "<cmd>FzfLua buffers<CR>", desc = "Buffers" },
-      { "s/", "<cmd>FzfLua live_grep<CR>", desc = "Buffers" },
+      { "s/", "<cmd>FzfLua live_grep_resume<CR>", desc = "Live Grep" },
     },
   },
 
